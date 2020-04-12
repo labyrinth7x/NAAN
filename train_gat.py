@@ -6,7 +6,7 @@ from utils import log_config, AverageMeter
 import time
 import os
 import torch.nn as nn
-from data.data_pipe import SubsetSampler
+from data_pipe import SubsetSampler
 import numpy as np
 from torch.nn.utils.clip_grad import clip_grad_norm_
 from feeder1 import Feeder
@@ -253,9 +253,9 @@ def parse():
 
     # Hyper Parameters
     parser = argparse.ArgumentParser()
-    parser.add_argument('--feat_path', default='/disk2/zhangqi/emore/feats/labeled_feats.npz',
+    parser.add_argument('--feat_path', default='data/labeled/labeled_feats.npz',
                         help='path to feats')
-    parser.add_argument('--knn_path', default='/disk2/zhangqi/emore/knn_200/labeled_knn.npy',
+    parser.add_argument('--knn_path', default='data/labeled/labeled_knn.npy',
                         help='path to knn')
     parser.add_argument('--k_hops', type=int, nargs='+', default=[100,5])
     parser.add_argument('--num_epochs', default=5, type=int,

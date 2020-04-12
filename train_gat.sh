@@ -1,7 +1,7 @@
 GPUS=1,2
 export CUDA_VISIBLE_DEVICES=$GPUS
 
-base=results_new1
+base=results
 lr=0.002
 wd=5e-4
 alpha=0.2
