@@ -9,8 +9,8 @@ import torch.nn as nn
 from data_pipe import SubsetSampler
 import numpy as np
 from torch.nn.utils.clip_grad import clip_grad_norm_
-from feeder1 import Feeder
 from gat import GAT
+from feeder import Feeder
 
 
 logger = logging.getLogger()
@@ -111,16 +111,9 @@ def main(args):
             }, fpath=os.path.join(args.logs_dir, 'epoch_{}.ckpt'.format(0)))
         start_epoch = 0
         start_step = 0
-        if 'new1' in args.logs_dir:
-            from feeder1 import Feeder
-            trainset = Feeder(args.feat_path, 
+        trainset = Feeder(args.feat_path, 
                       args.knn_path, 
                       args.sample_hops, args.k_hops)
-        else:
-            from feeder import Feeder
-            trainset = Feeder(args.feat_path, 
-                      args.knn_path, 
-                      args.k_hops)
         
         train_loader = DataLoader(trainset, batch_size=args.batch_size, num_workers=args.workers, shuffle=True, pin_memory=True)
 
