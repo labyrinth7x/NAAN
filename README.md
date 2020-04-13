@@ -1,11 +1,10 @@
 # Semi-supervised-face-recognition
 ![fw](https://github.com/labyrinth7x/Semi-supervised-face-recognition/blob/master/resources/fw.png)
 
-This repository is for our IJCNN'20 paper [Neighborhood-Aware Attention Network for
-Semi-supervised Face Recognition](). (will be released **soon**)
 
 ## Introduction
-
+This repository is for our IJCNN'20 paper [Neighborhood-Aware Attention Network for
+Semi-supervised Face Recognition](). (will be released **soon**)
 
 ## Requirements
 - Python 3.5
@@ -16,9 +15,8 @@ Semi-supervised Face Recognition](). (will be released **soon**)
 ## Data Preparation
 - Download the full MS-Celeb-1M realeased by [ArcFace](https://github.com/deepinsight/insightface) from [baidu](https://pan.baidu.com/s/1S6LJZGdqcZRle1vlcMzHOQ) or [dropbox](https://www.dropbox.com/s/wpx6tqjf0y5mf6r/faces_ms1m-refine-v2_112x112.zip?dl=0).
 - Download the splitted image list produced by [learn-to-cluster](https://github.com/yl-1993/learn-to-cluster) from [GoogleDrive](https://drive.google.com/file/d/1kurPWh6dm3dWQOLqUAeE-fxHrdnjaULB/view?usp=sharing) or [OneDrive](https://mycuhk-my.sharepoint.com/:u:/g/personal/1155095455_link_cuhk_edu_hk/ET7lHxOXSjtDiMsgqzLK9LgBi_QW0WVzgZdv2UBzE1Bgzg?e=jZ7kCS).
-- Download the pretrained model face recognition model from [GoogleDrive]．
 - Download the extracted features and precomputed knn for split0 (labeled) from [GoogleDrive](https://drive.google.com/open?id=1BIij-1kQ2OybcmUqRhLyaAfRb1MsE9He) and move them to ```data/labeled```.
-- Download the extracted features and precomputed knn for split1 (unlabeled) from [GoogleDrive](https://drive.google.com/drive/folders/1zBmoowfo-eMloo9iXY3TMyIRecB0Uhvt?usp=sharing) and move them to ```data/unlabeled```.
+- Download the extracted features and precomputed knn for split1 (unlabeled) from [GoogleDrive](https://drive.google.com/drive/folders/1zBmoowfo-eMloo9iXY3TMyIRecB0Uhvt?usp=sharing) and move them to ```data/unlabeled```. Or you can download the pretrained model face recognition model from [GoogleDrive](), and extract/compute the features and knn files and move them to the same directory.
 
 
 ## Training
