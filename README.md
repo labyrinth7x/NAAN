@@ -1,4 +1,4 @@
-# Semi-supervised-face-recognition
+# Semi-supervised Face Recognition
 ![fw](https://github.com/labyrinth7x/Semi-supervised-face-recognition/blob/master/resources/fw.png)
 
 
@@ -42,4 +42,5 @@ You can also download the pre-trained model weights from [GoogleDrive](https://d
   It will output the BCubed F-measure, and restore the new pseudo_label_clean file by removing the singleton clusters in the same pseudo_label_dir.
  
  ## Joint Training Framework
- It will be released soon.
+ You may refer to the following repository:  
+ https://github.com/labyrinth7x/multi-task-face-recognition-framework
