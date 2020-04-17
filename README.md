@@ -1,6 +1,6 @@
-# Semi-supervised Face Recognition
+# Neighborhood-Aware Attention Network for Semi-supervised Face Recognition
 This repository is the official implementation of our IJCNN'20 paper [Neighborhood-Aware Attention Network for
-Semi-supervised Face Recognition](https://drive.google.com/file/d/1fNarQTLGRcmf06C1Uhytjcbn3U9hknf0/view?usp=sharing).
+Semi-supervised Face Recognition](https://drive.google.com/file/d/1fNarQTLGRcmf06C1Uhytjcbn3U9hknf0/view?usp=sharing).  
 <img src="https://github.com/labyrinth7x/Semi-supervised-face-recognition/blob/master/resources/fw.png" width = 80% height = 80% div align=center />
 
 ## Requirements
