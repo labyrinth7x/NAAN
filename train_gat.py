@@ -246,9 +246,9 @@ def parse():
 
     # Hyper Parameters
     parser = argparse.ArgumentParser()
-    parser.add_argument('--feat_path', default='data/labeled/labeled_feats.npz',
+    parser.add_argument('--feat_path', default='data/labeled/split0_feats.npz',
                         help='path to feats')
-    parser.add_argument('--knn_path', default='data/labeled/labeled_knn.npy',
+    parser.add_argument('--knn_path', default='data/labeled/split0_knn.npy',
                         help='path to knn')
     parser.add_argument('--k_hops', type=int, nargs='+', default=[100,5])
     parser.add_argument('--num_epochs', default=5, type=int,

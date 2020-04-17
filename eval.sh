@@ -7,6 +7,6 @@ python3.5 eval_gat.py \
             --split split1 \
             --step 0.6 \
             --th 0.8 \
-            --logs_dir results/lr-0.002-wd-5e-4-hops-100-10-batch-512-nheads-1-alpha-0.2-dropout-0-clip-2-120-0 \
+            --logs_dir results/lr-0.002-wd-5e-4-hops-100-10-120-batch-512-nheads-1-alpha-0.2
             --num_workers 4 \
             --model_path epoch_2_step_50000.ckpt \

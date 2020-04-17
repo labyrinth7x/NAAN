@@ -5,8 +5,10 @@ Semi-supervised Face Recognition](https://drive.google.com/file/d/1fNarQTLGRcmf0
 
 ## Requirements
 * Python >= 3.5
-* Pytorch >= 1.0.0
+* PyTorch >= 1.0.0
+* torchvision >= 0.2.1
 * numpy
+* tqdm
 
 To install requirements:
 ```

@@ -7,6 +7,7 @@ from torchvision import transforms as trans
 from scipy.sparse import coo_matrix
 from tqdm import tqdm
 import logging
+import argparse
 
 IMG_EXTENSIONS = ('.jpg', '.jpeg', '.png', '.ppm', '.bmp', '.pgm', '.tif', '.tiff', '.webp')
 
@@ -185,28 +186,31 @@ def bcubed(ref_labels, sys_labels, cm=None):
 
     
 if __name__=='__main__':
-
     
+    parser = argparse.ArgumentParser()
+    parser.add_argument('pseudo_dir', default='pseudo_labels',
+                        help='dirname of the generated pseudo labels')
+    parser.add_argument('split', default='split1',
+                        help='the testing split')
+    args = parser.parse_args()
 
-    name = sys.argv[1]
-    split = 'split1'
-    base = name + '/{}_labels.txt'.format(split)
+    base_file = args.pseudo_dir + '/{}_labels.txt'.format(args.split)
     print_generated(base)
-    com = 'data/unlabeled/{}_labels.txt'.format(split)
-    evaluate(base, com, True)
-    removes(base, split)
+    gt_file = 'data/unlabeled/{}_labels.txt'.format(args.split)
+    evaluate(base_file, gt_file, True)
+    removes(base_file, args.split)
 
-    a = open(base,'r').readlines()
-    aa = np.array([int(item) for item in a])
-    b = open(com,'r').readlines()
-    bb = np.array([int(item) for item in b])
+    base = open(base_file,'r').readlines()
+    base_ori = np.array([int(item) for item in base])
+    gt = open(com,'r').readlines()
+    gt_ori = np.array([int(item) for item in gt])
     print('start evaluation')
-    p,r,f = bcubed(bb,aa)
+    p,r,f = bcubed(gt_ori, base_ori)
     print('{:.4f},{:.4f},{:.4f}'.format(p,r,f))
     # remove single
-    index = remove(base)
-    aa = aa[index]
-    bb = bb[index]
+    index = remove(base_file)
+    base_rmv = base_ori[index]
+    gt_rmv = gt_ori[index]
     print('start evaluation with singleton removing')
-    p,r,f = bcubed(bb,aa)
-    print('{:.4f},{:.4f},{:.4f}'.format(p,r,f))
+    p_rmv, r_rmv, f_rmv = bcubed(gt_rmv, base_rmv)
+    print('{:.4f},{:.4f},{:.4f}'.format(p_rmv, r_rmv, f_rmv))

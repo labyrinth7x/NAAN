@@ -10,17 +10,17 @@ size=512
 hops=120
 hop1=100
 hop2=10
+nh=1
 
 
-filename=$base/lr-$lr-wd-$wd-hops-$hop1-$hop2-batch-$size-nheads-1-alpha-$alpha-dropout-0-clip-$clip-$hops
+filename=$base/lr-$lr-wd-$wd-hops-$hop1-$hop2-$hops-batch-$size-nheads-$nh-alpha-$alpha
 
 
 python3.5 train_gat2g.py \
     --batch_size $size \
     --k_hops $hop1 $hop2 \
-    --nheads 1 \
-    --dropout 0 \
-    --lr 0.002 \
+    --nheads $nh \
+    --lr $lr \
     --logs_dir $filename \
     --grad_clip $clip \
     --alpha $alpha \
