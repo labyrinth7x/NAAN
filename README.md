@@ -12,7 +12,7 @@ Semi-supervised Face Recognition](https://drive.google.com/file/d/1fNarQTLGRcmf0
 
 To install requirements:
 ```
-python install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 
